@@ -7,11 +7,20 @@ This project uses a small house dataset to show:
 - what a "dimension" means in machine learning
 - how higher-dimensional space becomes sparse
 - why too many features can increase prediction error
+- how checking feature correlation helps spot redundant dimensions
 - how PCA helps reduce dimensionality while keeping most of the useful information
 
 ## Notebook
 
 Main notebook: [notebook/curse_of_dimensionality.ipynb](./notebook/curse_of_dimensionality.ipynb)
+
+The notebook now walks through:
+
+- dimensions from 1D to 3D
+- space growth in higher dimensions
+- feature count vs model error
+- correlation checks for redundant features
+- PCA-based dimensionality reduction
 
 ## Visual Outputs
 
@@ -39,12 +48,19 @@ This visualization shows how PCA compresses two correlated features into one str
 
 ![PCA dimensionality reduction](./output/pca_dimensionality_reduction.png)
 
+### 5. Feature correlation check
+
+This heatmap shows which features are strongly related, making it easier to spot redundant dimensions before applying PCA.
+
+![Feature correlation heatmap](./output/feature_corelation.png)
+
 ## What You Learn
 
 - Dimension = one feature or axis in the data
 - More dimensions create more empty space
 - Sparse high-dimensional space makes learning harder
 - Redundant features can hurt performance
+- Correlation analysis helps detect duplicate or overlapping features
 - PCA can reduce dimensionality without losing much signal
 
 ## Project Structure
@@ -57,6 +73,7 @@ curse-of-dimensionality/
 |   |-- dimensionality_views_1d_2d_3d.png
 |   |-- curse_of_dimensionality_space_growth.png
 |   |-- adding_features_error_curve.png
+|   |-- feature_corelation.png
 |   `-- pca_dimensionality_reduction.png
 `-- readme.md
 ```
